@@ -1,0 +1,65 @@
+<% layout("./boiler/boilerplate.ejs") %>
+
+<button class="btn btn-primary mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Categories</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasScrollingLabel" style="color: blue;">What's Your Mood?</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Discover the perfect outfit with our curated selection of men’s clothing. Browse by category to find essentials and trending styles, from tailored suits and casual shirts to jeans, shorts, and activewear. Choose from a variety of colors, fits, and fabrics designed to elevate your wardrobe for any occasion. With top brands and exclusive collections, we’ve got everything you need—whether you’re dressing up for work, keeping it casual, or gearing up for a workout. Start exploring to find your new favorites!</p>
+    <h5>Categories</h5><br>
+    <ul>
+    <label>
+    <input type="checkbox" name="Shirts" value="Shirts">&nbsp;&nbsp;Shirt
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Jeans" value="Jeans">&nbsp;&nbsp;Jeans
+      </label><br><br>
+    <label>
+      <input type="checkbox" name="Jackets" value="Jackets">&nbsp;&nbsp;Jackets
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Shorts" value="Shorts">&nbsp;&nbsp;Shorts
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Pants" value="Pants">&nbsp;&nbsp;Pants
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="T-Shirts" value="T-Shirts">&nbsp;&nbsp;T-Shirts
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Blazzers" value="Blazzers">&nbsp;&nbsp;Blazzers
+    </label>
+    </ul>
+  </div>
+</div>
+
+<div class="container-fluid row">
+  <% for(let mens of men) { %>
+    <div class="col-12 col-lg-3 col-md-4 col-sm-12 mt-4">
+      <a href="/clothing/<%= mens.person %>/<%=mens._id %>" class="all-men text-decoration-none">
+        <div class="card h-100 all">
+          <img src="<%= mens.image %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><b><%= mens.name %></b></p>
+            <p class="card-text">&dollar;&nbsp;<%= mens.price %></p>
+            <form method="post" action="/cart">
+              <input type="hidden" name="cloth[image]" value="<%= mens.image %>">
+              <input type="hidden" name="cloth[name]" value="<%= mens.name %>">
+              <input type="hidden" name="cloth[description]" value="<%= mens.description %>">
+              <input type="hidden" name="cloth[price]" value="<%= mens.price %>">
+              <input type="hidden" name="cloth[stock]" value="<%= mens.stock %>">
+              <input type="hidden" name="cloth[color]" value="<%= mens.color %>">
+              <%if(currUser){%>
+                <button type="submit" class="btn btn-info">Add to Cart</button>
+                  <% } %>
+          </div>
+        </div>
+        </form>
+      </a>
+    </div>
+  <% } %>
+</div>
+

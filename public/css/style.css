@@ -1,0 +1,198 @@
+body{
+    font-family: "plus jakarta sans"!important;
+}
+.nav-link{
+    margin-right: 10px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    color: blue;
+}
+.navbar-brand{
+    color: blueviolet;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.navbar-brand:hover{
+    color: blueviolet !important;
+}
+.btn-primary{
+    margin-left:20px;
+}
+.offcanvas-body p{
+    font-size: 14px;
+}
+
+.wrapper {
+    min-height: 70vh; 
+}
+/* index */
+.carousel-item img{
+    height: 700px;
+}
+.image{
+    height:600px;
+}
+.why{
+    text-align: center !important;
+    
+    }
+.why p{
+    font-size: 50px;
+}
+.box{
+    height: 250px;
+    width: 300px;
+    border: 2px solid black;
+    background-color: #002C3E;
+    color: #ebebeb;
+    padding: 30px 5px 5px 5px;
+}
+.box img{
+    height: 80px;
+    width: 80px;
+}
+.box span{
+    font-size: 30px;
+}
+.newsletter{
+    text-align: center !important;
+    background-color: #D4CED0;
+    padding-top: 40px;
+    padding-bottom: 40px;   
+}
+.newsletter input{
+   border-radius: 90px;
+   border: none;
+   width: 542px;
+   height: 50px;
+   padding: 5px 25px 5px 25px;
+}
+.newsletter button{
+   border-radius: 90px;
+}
+.product{
+    background-color: white !important;
+    padding: 0%;
+    border: none;
+    color: black;
+}
+.product img:hover{
+    opacity: 0.8;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content p{
+    font-size: medium !important;
+}
+.re{
+    padding: 20px 20px 20px 20px;
+    font-size: larger;
+    text-align: left;
+}
+.re p{
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+/* done */
+.all{
+    border: 1px solid black;
+    margin: auto;
+    padding: 0%;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+}
+
+img{
+    width:100%;
+    height: 11rem;
+}
+
+.all:hover {
+    transform: scale(1.03); 
+}
+
+/* show cloth */
+
+.img-fluid{
+    width:400px !important;
+    border-radius:5px;
+}
+.showCloth{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* footer */
+
+footer{
+    margin-top: 2rem;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-info-socials{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i{
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    height: 8rem;
+    text-align: center;
+    display: flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+.w{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:900px) {
+    .carousel-item img{
+        height:300px;
+        
+    }
+    .newsletter input{
+        border-radius: 90px;
+        border: none;
+        width: 200px;
+        height: 50px;
+        padding: 5px 25px 5px 25px;
+     }
+    .why p{
+        font-size: 30px;
+    }
+    .imm img{
+        height: 400px;
+    }
+    
+}

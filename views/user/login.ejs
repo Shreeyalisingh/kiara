@@ -1,0 +1,24 @@
+<%layout("/boiler/boilerplate.ejs")%>
+
+<div class="row mt-3" style="max-width: 1500px;">
+    <h1 class="col-6 offset-3 mb-3">Login on Kiara</h1>
+    <div class="col-6 offset-3">
+        <form action="/login" method="post" class="needs-validation" novalidate>
+            <div class="mb-3"><label for="username" class="form-label">Username</label>
+                <input name="username" type="text" id="username" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Enter Username</div>
+            </div>
+            <div class="mb-3"><label for="password" class="form-label">Password</label>
+                <input name="password" type="password" id="username" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Enter password</div>
+            </div>
+            <button class="btn btn-info">Login</button><br><br>
+        </form>
+        <div class="b" style="display: flex;">
+        <a href="/auth/google"><button class="btn btn-primary" style="margin-left: 0px !important;"><i class="fa-brands fa-google"></i>&nbsp;&nbsp;Continue with Google</button></a></div><br> 
+        <a href="/signup"><p>New User! SignUp Now!</p></a>  
+    </div>
+    
+</div>

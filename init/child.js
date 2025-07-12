@@ -1,0 +1,247 @@
+const childData=[
+    {
+        "name": "Kids Cotton T-Shirt",
+        "category": "tops",
+        "price": 12.99,
+        "sizes": ["S", "M", "L"],
+        "color": "White",
+        "stock": 200,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Soft cotton t-shirt with a playful graphic, perfect for casual wear.",
+        "image": "https://media.istockphoto.com/id/1252362146/photo/a-naughty-little-girl-in-a-white-t-shirt-is-holding-herself-by-the-hair-on-a-yellow.webp?a=1&b=1&s=612x612&w=0&k=20&c=IF5zu7ELgCmCuuWKTeqV3_j-B9LaveaYnl2n1pLpjZQ="
+    },
+    {
+        "name": "Casual Chambray Shirt",
+        "category": "tops",
+        "price": 29.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Light Blue",
+        "stock": 90,
+        "rating": 4.5,
+        "person":"children",
+        "description": "Classic chambray shirt, perfect for casual outings or layered looks.",
+        "image": "https://media.istockphoto.com/id/1332276438/photo/photo-of-adorable-sweet-cheerful-girl-posing-sit-floor-wear-eyeglasses-white-t-shirt-isolated.webp?a=1&b=1&s=612x612&w=0&k=20&c=d5Qqc9ESq6OtYnJ8lYw5F9E-Jml3gkT-JaHMZs0YZ6c="
+    },
+    {
+        "name": "Boys Slip-On Shoes",
+        "category": "footwear",
+        "price": 27.99,
+        "sizes": ["10", "11", "12", "13"],
+        "color": "Black",
+        "stock": 100,
+        "rating": 4.4,
+        "person":"children",
+        "description": "Easy-to-wear slip-on shoes with breathable fabric and sturdy sole.",
+        "image": "https://media.istockphoto.com/id/522628236/photo/little-girl-sneakers-shoes.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZLoDk453tlFBzJx2QeWARL2ok57zxJR5ZwCg10I9dTU="
+    },
+    {
+        "name": "Boys Denim Jeans",
+        "category": "bottoms",
+        "price": 22.99,
+        "sizes": ["XS", "S", "M", "L"],
+        "color": "Blue",
+        "stock": 150,
+        "rating": 4,
+        "person":"children",
+        "description": "Classic fit denim jeans, durable and comfortable for active kids.",
+        "image": "https://media.istockphoto.com/id/1406875146/photo/full-body-photo-of-cool-little-boy-jump-wear-shirt-jeans-sneakers-isolated-on-blue-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=s7tc6hCp-pbVjyuwQGIdXauS_BtuUscW_F2Mfd920Os="
+    },
+    {
+        "name": "Girls Floral Dress",
+        "category": "dresses",
+        "price": 29.99,
+        "sizes": ["XS", "S", "M"],
+        "color": "Pink",
+        "stock": 100,
+        "rating": 4.8,
+        "person":"children",
+        "description": "Adorable floral dress with a lightweight fabric, perfect for warm days.",
+        "image": "https://media.istockphoto.com/id/1596040598/photo/baby-girl-enjoying-nature-outdoors-in-the-garden.jpg?s=612x612&w=0&k=20&c=-jWtadtMsTcirRXdFo6xAlG1ARHbnIB-WDthsw8aEDs="
+    },
+    {
+        "name": "Kids Sneakers",
+        "category": "footwear",
+        "price": 34.99,
+        "sizes": ["10", "11", "12", "13"],
+        "color": "Gray",
+        "stock": 180,
+        "rating": 2,
+        "person":"children",
+        "description": "Comfortable and durable sneakers designed for all-day play.",
+        "image": "https://media.istockphoto.com/id/520219029/photo/close-up-of-boys-legs.webp?a=1&b=1&s=612x612&w=0&k=20&c=HYYUNn5-0-zuQoOZPxRQT-uv6JAKcrh-XqJcRAFCdsA="
+    },
+    {
+        "name": "Kids Winter Jacket",
+        "category": "jackets",
+        "price": 49.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Red",
+        "stock": 90,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Warm and cozy winter jacket, ideal for keeping kids comfortable in the cold.",
+        "image": "https://images.unsplash.com/photo-1440288736878-766bd5839edb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a2lkJTIwaW4lMjBjb3R0b24lMjB0c2hpcnR8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+        "name": "Kids Long Sleeve Tee",
+        "category": "tops",
+        "price": 15.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Blue",
+        "stock": 170,
+        "rating": 3,
+        "person":"children",
+        "description": "Lightweight long sleeve tee with colorful patterns, great for layering.",
+        "image": "https://images.unsplash.com/photo-1453342664588-b702c83fc822?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtpZCUyMGluJTIwY290dG9uJTIwdHNoaXJ0fGVufDB8fDB8fHww"
+    },
+    {
+        "name": "Girls Leggings",
+        "category": "bottoms",
+        "price": 16.99,
+        "sizes": ["XS", "S", "M", "L"],
+        "color": "Black",
+        "stock": 140,
+        "rating": 5,
+        "person":"children",
+        "description": "Stretchy and comfortable leggings, suitable for all activities.",
+        "image": "https://media.istockphoto.com/id/672950480/photo/little-girl-tying-laces-on-sneakers.webp?a=1&b=1&s=612x612&w=0&k=20&c=0FHN3_1-JaDtEKERlyQOFbPIuNcGehacT8JbN_O3D34="
+    },
+    {
+        "name": "Kids Casual Dress",
+        "category": "dresses",
+        "price": 24.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Yellow",
+        "stock": 130,
+        "rating": 4,
+        "person":"children",
+        "description": "Casual dress with a soft fabric and colorful design, perfect for daily wear.",
+        "image": "https://images.unsplash.com/photo-1506804880640-f3205deb1b8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkJTIwaW4lMjBmbG9yYWwlMjBkcmVzc3xlbnwwfHwwfHx8MA%3D%3D "
+    },
+   
+    {
+        "name": "Kids Hooded Rain Jacket",
+        "category": "jackets",
+        "price": 39.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Yellow",
+        "stock": 80,
+        "rating": 4,
+        "person":"children",
+        "description": "Water-resistant hooded jacket with a lightweight design, perfect for rainy days.",
+        "image": "https://images.unsplash.com/photo-1471342051519-9621d25323fc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2lkJTIwaW4lMjByYWluY29hdHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+        "name": "Boys Polo Shirt",
+        "category": "tops",
+        "price": 17.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Navy",
+        "stock": 140,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Classic polo shirt in soft fabric, suitable for both casual and formal occasions.",
+        "image": "https://media.istockphoto.com/id/521381367/photo/white-t-shirt-on-a-young-man-isolated-front-and-back.jpg?s=612x612&w=0&k=20&c=ZAneW0Q82x_BFBHcSkDU5DLc6An5H4iU48B1HAssdwo="
+    },
+    {
+        "name": "Girls Denim Skirt",
+        "category": "bottoms",
+        "price": 19.99,
+        "sizes": ["XS", "S", "M"],
+        "color": "Blue",
+        "stock": 120,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Stylish denim skirt, easy to pair with any top for a cute outfit.",
+        "image": "https://media.istockphoto.com/id/1423004653/photo/african-american-kid-girl-walks-down-steps-on-city-street-portrait-of-child-in-denim-skirt.webp?a=1&b=1&s=612x612&w=0&k=20&c=da_d02X9Hh6JniBtfwArkr7FVpakzjUn_aHPiNqXDIQ="
+    },
+    {
+        "name": "Kids Party Dress",
+        "category": "dresses",
+        "price": 34.99,
+        "sizes": ["S", "M", "L"],
+        "color": "Red",
+        "stock": 85,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Elegant party dress with sequins and a satin finish, perfect for special occasions.",
+        "image": "https://media.istockphoto.com/id/1827744520/photo/happy-indian-family-of-three-sitting-in-garden-baby-girl-sitting-on-blue-chair-with-number-1.webp?a=1&b=1&s=612x612&w=0&k=20&c=r1gD-Xz1IHUPzHOgzAu4N-ejA2fp0vSo3HQgdj4_VBo="
+    },
+    {
+        "name": "Kids Running Shoes",
+        "category": "footwear",
+        "price": 32.99,
+        "sizes": ["10", "11", "12", "13"],
+        "color": "White",
+        "stock": 110,
+        "rating": 4.6,
+        "person":"children",
+        "description": "Lightweight running shoes with cushioned soles, ideal for active kids.",
+        "image": "https://media.istockphoto.com/id/518868426/photo/new-sneakers-on-boys-feet.webp?a=1&b=1&s=612x612&w=0&k=20&c=1WMHEtv3Y81dbJKy7V8cSYcL5v9NUJKbXlVHFaVjrX0="
+    },
+    
+        {
+        "name": "Kids Graphic Hoodie",
+            "category": "tops",
+            "price": 24.99,
+            "sizes": ["S", "M", "L"],
+            "color": "Gray",
+            "stock": 150,
+            "rating": 4.7,
+            "person":"children",
+            "description": "Cozy graphic hoodie with a front pocket, perfect for layering on cool days.",
+            "image": "https://media.istockphoto.com/id/1298575087/photo/asian-mother-and-daughter-enjoy-making-tie-dye-clothes-at-home.jpg?s=612x612&w=0&k=20&c=e74ld5385D48IHLKmOF4A8r1f4mqs5vCDec8601PRpc="
+        },
+        {
+            "name": "Girls Tutu Skirt",
+            "category": "bottoms",
+            "price": 18.99,
+            "sizes": ["XS", "S", "M"],
+            "color": "Pink",
+            "stock": 120,
+            "rating": 4.8,
+            "person":"children",
+            "description": "Cute and fluffy tutu skirt for a fun and stylish look.",
+            "image":"https://media.istockphoto.com/id/1320137682/photo/smiling-stylish-girl-standing-with-hands-on-waist-in-studio.webp?a=1&b=1&s=612x612&w=0&k=20&c=zcgf1gvQaA0xGsa20vh64U4iLFNUnN5ysRfGZxJR9kA="
+        },
+        {
+            "name": "Girls Summer Dress",
+            "category": "dresses",
+            "price": 25.99,
+            "sizes": ["S", "M", "L"],
+            "color": "Yellow",
+            "stock": 100,
+            "rating": 4.6,
+            "person":"children",
+            "description": "Lightweight and breezy dress perfect for warm summer days.",
+            "image": "https://plus.unsplash.com/premium_photo-1672081742135-b72eb2baf5cb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2lkJTIwc25lYWtlcnxlbnwwfHwwfHx8MA%3D%3D"
+        },
+        {
+            "name": "Boys Sports Sandals",
+            "category": "footwear",
+            "price": 27.99,
+            "sizes": ["10", "11", "12", "13"],
+            "color": "Blue",
+            "stock": 90,
+            "rating": 4.5,
+            "person":"children",
+            "description": "Durable sports sandals with adjustable straps, ideal for outdoor activities.",
+            "image": "https://media.istockphoto.com/id/1125795420/photo/close-up-image-of-new-beautiful-kids-shoes-on-childs-feet.webp?a=1&b=1&s=612x612&w=0&k=20&c=uY_u4cZcxirmRLLKabSAPV-HXr8hRns4Nq8Hqy2SJDA="
+        },
+        {
+            "name": "Kids Lightweight Windbreaker",
+            "category": "jackets",
+            "price": 29.99,
+            "sizes": ["S", "M", "L"],
+            "color": "Green",
+            "stock": 85,
+            "rating": 4.7,
+            "person":"children",
+            "description": "Wind-resistant and breathable jacket, great for outdoor adventures.",
+            "image": "https://media.istockphoto.com/id/1224295673/photo/indian-girl-playing-with-paper-airplane-stock-image-stock-photo.webp?a=1&b=1&s=612x612&w=0&k=20&c=hPEZBrvs9GM3iF2z5_FZQ2WdIRyYFKWZ6eKTrAXs0xw="
+        }
+    ]
+    
+
+module.exports={data:childData};

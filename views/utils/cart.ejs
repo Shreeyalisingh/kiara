@@ -1,0 +1,112 @@
+<% layout("./boiler/boilerplate.ejs") %>
+
+<h1 class="mt-2" style="margin-left: 10px; color: blue;"><i class="fa-solid fa-cart-shopping"></i> Your Cart </h1>
+
+<div class="container-fluid">
+    <!-- Cart Items (moved up) -->
+    <div class="row mb-4">
+        <% for(let cart of allCart) { %>
+        <div class="col-12 col-lg-3 col-md-4 col-sm-12 mt-4">
+            <a href="/cart/<%=cart._id %>" class="all-men text-decoration-none">
+                <div class="card h-100 all">
+                    <img src="<%= cart.image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"><b><%= cart.name %></b></p>
+                        <p class="card-text item-price" data-price="<%= cart.price %>">&dollar;&nbsp;<%= cart.price %></p>
+                        <div class="button">
+                            
+                            
+                            <form method="post" action="/delete/cart?_method=delete" style="display: inline-block; margin: 0;">
+                                <input type="hidden" name="id" value="<%= cart._id %>">
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <% } %>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cart Summary</h5>
+                    <p class="card-text">Total Items: <span id="totalItems"><%= allCart.length %></span></p>
+                    <p class="card-text">Total Amount: $<span id="totalAmount">0.00</span></p>
+                    
+                    <div id="paypal-button-container" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AbQj29r4qd9Pl74LtZDzK3MhNGtOFTRMkJWuEpL_9SOrO21PyNeSZaj0A3K9UOe8HyzZpTvs6tD6wTec&currency=USD"></script>
+
+<script>
+// Calculate total amount
+function calculateTotal() {
+    let total = 0;
+    document.querySelectorAll('.item-price').forEach(item => {
+        total += parseFloat(item.dataset.price);
+    });
+    document.getElementById('totalAmount').textContent = total.toFixed(2);
+    return total.toFixed(2);
+}
+
+// Initialize total calculation
+document.addEventListener('DOMContentLoaded', function() {
+    calculateTotal();
+});
+
+// PayPal Button for entire cart
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        const totalAmount = calculateTotal();
+        
+        return fetch('/create-paypal-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                amount: totalAmount
+            })
+        })
+        .then(response => response.json())
+        .then(data => data.orderID);
+    },
+    
+    onApprove: function(data, actions) {
+        return fetch(`/capture-paypal-order`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                orderID: data.orderID
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Payment completed successfully!');
+                // Clear cart after successful payment
+                window.location.href = '/payment-success';
+            } else {
+                alert('Payment failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during payment processing.');
+        });
+    },
+    
+    onError: function(err) {
+        console.error('PayPal error:', err);
+        alert('An error occurred with PayPal. Please try again.');
+    }
+}).render('#paypal-button-container');
+</script>

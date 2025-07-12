@@ -1,0 +1,55 @@
+<% layout("/boiler/boilerplate.ejs") %>
+
+<link rel="stylesheet" href="/css/dashboard.css">
+
+<div class="dashboard-container">
+    <h1 class="welcome-heading">Welcome, <%= user.username %></h1>
+    <p class="user-info">Email: <%= user.email %></p>
+    <p class="user-info">Role: <%= user.role %></p>
+
+    <h2 class="section-heading">Add New Item</h2>
+    <form class="item-form" method="POST" action="/dashboard/add-item">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="category" placeholder="Category" />
+        <input type="number" name="price" placeholder="Price" required />
+        <input type="text" name="sizes" placeholder="Sizes (comma separated)" />
+        <input type="text" name="color" placeholder="Color" />
+        <input type="number" name="stock" placeholder="Stock" />
+        <input type="text" name="description" placeholder="Description" required />
+        <input type="text" name="image" placeholder="Image URL" />
+        <button type="submit">Add Item</button>
+    </form>
+
+    <h2 class="section-heading">Your Items</h2>
+    <ul class="item-list">
+        <% items.forEach(item => { %>
+            <li>
+                <strong><%= item.name %></strong> - $<%= item.price %>
+            </li>
+        <% }) %>
+    </ul>
+
+    <% if (user.role === 'admin') { %>
+        <div class="admin-section">
+            <h2 class="section-heading">Admin Dashboard</h2>
+            <p>Here you can manage users, view reports, or oversee platform activity.</p>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= user.username %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.role %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</div>

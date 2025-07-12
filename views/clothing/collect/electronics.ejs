@@ -1,0 +1,58 @@
+<% layout("./boiler/boilerplate.ejs") %>
+
+<button class="btn btn-primary mt-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Categories</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title" id="offcanvasScrollingLabel" style="color: blue;">What's Your Mood?</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p>Upgrade your tech with our top selection of electronics! From the latest smartphones and laptops to high-performance headphones, smart home devices, and more, we have everything to meet your tech needs. Discover cutting-edge gadgets and trusted brands designed to make life easier, more connected, and more enjoyable. Find your next must-have device today!</p>
+    <h5>Categories</h5><br>
+    <ul>
+    <label>
+    <input type="checkbox" name="Laptops" value="Laptops">&nbsp;&nbsp;Laptops
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Mobile Phones" value="Mobile Phones">&nbsp;&nbsp;Mobile Phones
+      </label><br><br>
+    <label>
+      <input type="checkbox" name="Smart Homes" value="Smart Homes">&nbsp;&nbsp;Smart Homes
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Audio" value="Audio">&nbsp;&nbsp;Audio
+    </label><br><br>
+    <label>
+      <input type="checkbox" name="Cameras" value="Cameras">&nbsp;&nbsp;Cameras
+    </label><br><br>
+    </ul>
+  </div>
+</div>
+
+<div class="container-fluid row">
+  <% for(let electric of ele) { %>
+    <div class="col-12 col-lg-3 col-md-4 col-sm-12 mt-4">
+      <a href="/clothing/electronics/<%=electric._id %>" class="all-men text-decoration-none">
+        <div class="card h-100 all">
+          <img src="<%= electric.image %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><b><%= electric.name %></b></p>
+            <p class="card-text">&dollar;&nbsp;<%= electric.price %></p>
+            <form method="post" action="/cart">
+              <input type="hidden" name="cloth[image]" value="<%= electric.image %>">
+              <input type="hidden" name="cloth[name]" value="<%= electric.name %>">
+              <input type="hidden" name="cloth[description]" value="<%= electric.description %>">
+              <input type="hidden" name="cloth[price]" value="<%= electric.price %>">
+              <input type="hidden" name="cloth[stock]" value="<%= electric.stock %>">
+              <%if(currUser){%>
+                <button type="submit" class="btn btn-info">Add to Cart</button>
+                  <% } %>
+          </div>
+        </div>
+        </form>
+      </a>
+    </div>
+  <% } %>
+</div>
+

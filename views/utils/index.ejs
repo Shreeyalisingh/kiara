@@ -1,0 +1,135 @@
+<% layout("./boiler/boilerplate.ejs") %>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="/clothing/women"><img src="./images/women.jpg" class="d-block w-100" alt="..."></a>
+      </div>
+      <div class="carousel-item">
+        <a href="/clothing/men"><img src="./images/men.jpg" class="d-block w-100" alt="..."></a>
+      </div>
+      <div class="carousel-item">
+        <a href="/clothing/children"> <img src="./images/children.jpg" class="d-block w-100" alt="..."></a>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container mt-5 why">
+    <p style="color: gray;"><b>Why Shop With Us?</b></p><br>
+    <div class="row mt-3">
+      <div class=" offset-1 col-3 box mt-2">
+        <img src="./images/delivery.svg"><br>
+       <span> <b>Fast Delivery</b></span><br>
+        Get your item within a week or full refund
+      </div>
+      <div class="offset-1 col-3 box mt-2">
+         <img src="./images/quality.svg"><br>
+         <span > <b>Free Shiping</b></span><br>
+         Get your item shipped for free with Kaira
+      </div>
+      <div class="offset-1 col-3 box mt-2">
+        <img src="./images/qu.svg"><br>
+        <span> <b>Best Quality</b></span><br>
+        We do not compromise on quality your satisfaction is our need
+      </div>
+    </div>    
+  </div>
+  <div class="container-fluid mt-5 imm">
+    <a href="/clothing/women"><img src="./images/new.jpg" class="image"></a>
+  </div>
+  <div class="container mt-5 why">
+    <p style="color: red;"><b>Our Trending Products</b></p><br>
+    <div class="row mt-3">
+      <div class=" offset-1 col-3 box mt-2 product">
+        <a href="/clothing/men"><img src="./images/cat-item1.jpg" style="height: 80%; width: 100%; "><br></a>
+        <div class="content">
+        <p>Men's T-shirt</p>
+        <p>&dollar; 21.99</p>
+        </div>
+      </div>
+      <div class="offset-1 col-3 box mt-2 product">
+        <a href="/clothing/women"><img src="./images/post-large-image3.jpg" style="height: 80%; width: 100% "><br></a>
+         <div class="content">
+          <p>Women's Overcoat</p>
+          <p>&dollar; 42.35</p>
+         </div>
+      </div>
+      <div class="offset-1 col-3 box mt-2 product">
+        <a href="/clothing/women"><img src="./images/product-item-5.jpg" style="height: 80%; width: 100%; "><br></a>
+        <div class="content">
+          <p>Dresses</p>
+          <p>&dollar; 36.12</p>
+         </div>
+      </div>
+      <div class="offset-1 col-3 box mt-2 product">
+        <a href="/clothing/men"> <img src="./images/post-image2.jpg" style="height: 80%; width: 100%; "><br></a>
+        <div class="content">
+          <p>Men's Jolly</p>
+          <p>&dollar; 36</p>
+         </div>
+      </div>
+      <div class="offset-1 col-3 box mt-2 product">
+        <a href="/clothing/men"> <img src="./images/banner-image-4.jpg" style="height: 80%; width: 100%; "><br></a>
+        <div class="content">
+          <p>Wollen Sweater</p>
+          <p>&dollar; 56</p>
+         </div>
+      </div>
+      <div class="offset-1 col-3 box mt-2 product">
+        <a href="/clothing/women" ><img src="./images/post-image1.jpg" style="height: 80%; width: 100%;"><br></a>
+        <div class="content">
+          <p>Girl's Fashion</p>
+          <p>&dollar; 22.6</p>
+         </div>
+      </div>
+    </div>    
+  </div>
+  <div class="container-fluid newsletter mt-5">
+    <h1>Subscribe To Get Discount Offers</h1><br>
+    <p>Subscribe now, to recieve the latest update on trending products and much more</p>
+    <input type="email" placeholder="Enter Your Email"><br><br>
+    <button type="submit" class="btn btn-danger btn-mail">Submit</button>
+    
+  </div>
+
+  <div class="container mt-5 why">
+    <p style="color: gray"><b>Our Customers Love Us</b></p><br>
+    <div class="row mt-3">
+      <div class="col-4  mt-2 re" style="background-color: darksalmon;">
+       <span >  <b>"Aenean sollicitudin, quis<br>
+        auctor, nisi elit consequat<br>
+        ipsum, nec sagittis sem nibh id<br>
+        elit. Duis sed odio."
+        </b></span><br><br> <br>
+        <p>Lauren Munoz</p>
+      </div>
+      <div class="col-8  mt-2 re" style="background-color: aquamarine;">
+         <span > <b>“Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis<br>
+          auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio<br>
+          amet nibh cursus a sit amet mauris.”</b></span><br><br> <br>
+         <p> Ronald Snyder</p>
+      </div>
+      <div class=" col-7 re" style="background-color: blueviolet;">
+        <span> <b>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis<br>
+          auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio<br>
+          amet nibh cursus a sit amet mauris."
+          </b></span><br><br><br>
+        <p>Jessica Hawkins</p>
+      </div>
+      <div class=" col-5 re" style="background-color: green;">
+        <span> <b>Aenean sollicitudin, quis
+          auctor, nisi elit consequat
+          ipsum, nec sagittis sem nibh id
+          elit. Duis sed odio.</b></span><br><br><br>
+        <p>Sean West</p>
+      </div>
+    </div>    
+  </div>

@@ -1,0 +1,88 @@
+<% layout("./boiler/boilerplate.ejs") %>
+
+<div class="card mt-4 showCloth" style="border: none; width: auto;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <form method="post" action="/cart">
+          <input type="hidden" name="cloth[image]" value="<%= clothInfo.image %>">
+          <input type="hidden" name="cloth[name]" value="<%= clothInfo.name %>">
+          <input type="hidden" name="cloth[description]" value="<%= clothInfo.description %>">
+          <input type="hidden" name="cloth[price]" value="<%= clothInfo.price %>">
+          <input type="hidden" name="cloth[stock]" value="<%= clothInfo.stock %>">
+          <input type="hidden" name="cloth[color]" value="<%= clothInfo.color %>">
+        <img src="<%= clothInfo.image %>" class="img-fluid rounded-start" >
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title"><%= clothInfo.name %></h3><br>
+          <p class="card-text" ><%= clothInfo.description %></p><br>
+          <h5 class="card-title">&dollar;&nbsp;<%= clothInfo.price %></h5><br>
+          <p class="card-text">Stock Available: <%= clothInfo.stock%></p><br>
+          <p class="card-text">Color: <%= clothInfo.color%></p><br>
+          <p class="card-text">
+          </p><br>
+          <%if(currUser){%>
+            <button type="submit" class="btn btn-info">Add to Cart</button>
+              <% } %><br><br>
+          </form>
+          <p class="card-text"><small class="text-body-secondary">Kaira's Trend!</small></p>
+            <div class="col-8 mb-2 ">
+              <% if(currUser){ %> 
+              <hr>
+              <h4 >Leave a review</h4>
+              <form action="/listings/<%=clothInfo.id%>/review" method="post" novalidate class="needs-validation">
+                  <div class="mb-3 mt-3">
+                      <fieldset class="starability-slot">
+                          <legend>Rating:</legend>
+                          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                          <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                          <label for="first-rate1" title="Terrible">1 star</label>
+                          <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                          <label for="first-rate2" title="Not good">2 stars</label>
+                          <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                          <label for="first-rate3" title="Average">3 stars</label>
+                          <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                          <label for="first-rate4" title="Very good">4 stars</label>
+                          <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                          <label for="first-rate5" title="Amazing">5 stars</label>
+                        </fieldset>
+                  </div> 
+                  <div class="mb-3 mt-3">
+                      <label for="comment" class="form-label">Comment</label>
+                      <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+                      <div class="invalid-feedback">Please add your valuable feedback</div>
+                  </div>
+                  <button class="btn btn-outline-dark">Submit</button>
+              </form>
+              <hr>
+              <% } %>
+              
+              <% if(clothInfo.reviews.length >0){ %>
+              <div class="row">
+              <h4><b>All Reviews</b></h4>
+              <% for(review of clothInfo.reviews) {%>
+                  <div class="card col-4" style="padding: 0%; border:0px;">
+                      <div class="card mb-1" style="padding: 0px ; border: 0px;">
+                          <div class="card-body">
+                              <p class="card-text"><b> @<%= review.author.username%></b> </p>
+                            <p class="starability-result card-text" data-rating="<%=review.rating%>">
+                             
+                            </p>
+                            <p class="card-text"><%= review.comment%> </p>
+                          </div>
+                          <% if(currUser && review.author._id.equals(currUser._id)){ %>
+                          <form class="mt-3" method="post" action="/listings/<%= clothInfo._id %>/review/<%= review._id %>?_method=delete">
+                              <button class="btn btn-sm btn-dark">delete</button>
+                          </form>
+                          <% } %>
+                        </div>
+                  </div>
+                  <% } %>
+                </div>
+                <% } %>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
