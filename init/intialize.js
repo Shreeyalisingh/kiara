@@ -11,7 +11,7 @@ const ch=require("./child.js");
 require("dotenv").config();
 
 async function main(){
-    await mongoose.connect("mongodb+srv://vbhargav0310:Jaimatadi@cluster0.yo8jy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb://127.0.0.1/kiara");
 }
 main()
 .then((res)=>{
