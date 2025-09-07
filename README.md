@@ -27,7 +27,7 @@ Kiara is a modern, stylish, and full-featured e-commerce website built with Node
 1. Clone the repo
 
    ```bash
-   https://github.com/Shreeyalisingh/Kaira-e-commerce.git
+   https://github.com/Shreeyalisingh/Kaira.git
    cd kiara
    ```
 2. Install dependencies
